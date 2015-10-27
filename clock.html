@@ -1,0 +1,35 @@
+<html>
+   <head>
+      <script type="text/javascript" src="clock.js"></script>
+	  <script type="text/javascript">
+	     var clock;
+		 function loadClock(){
+		    var hourMarkLength=10;
+		    var minuteMarkLength=5;
+		    var settings = {};
+		    settings.radius = 100;
+		    settings.secondPinPadding = 5;
+		    settings.minutePinPadding = 10;
+		    settings.hourPinPadding = 15;
+		    settings.clockPlateEdgeWidth = 10;
+		    settings.hourMarkLength = hourMarkLength;
+		    settings.minuteMarkLength = minuteMarkLength;
+			clock = new Clock(settings);
+			var clockArea = document.getElementById("clockArea");
+			clock.attach(clockArea);
+		 }
+		 function unloadClock(){
+		    if(clock){
+			   clock.destroy();
+			}
+		 }
+		 window.onload = loadClock;
+		 window.onunload = unloadClock;
+		 
+	  </script>
+   </head>
+   <body>
+      <div align="center" id="clockArea">
+	  </div>
+   </body>
+</html>
